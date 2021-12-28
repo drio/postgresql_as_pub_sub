@@ -26,3 +26,9 @@ new_job:
 
 list_jobs:
 	echo "select * from ps_jobs" | psql $(DB_NAME)
+
+venv:
+	virtualenv -p python3.9 ./venv
+
+deps:
+	pip3 install psycopg2
