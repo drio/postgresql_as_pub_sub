@@ -1,6 +1,7 @@
 ## Intro
 
-This is a proof of concept on how to use psql as a job server (see 1 and 2).
+This is a proof of concept to explore the idea of using [PostgreSQL as a job server](https://webapp.io/blog/postgres-is-the-answer/).
+server.
 
 ## Usage
 
@@ -18,6 +19,7 @@ This is a proof of concept on how to use psql as a job server (see 1 and 2).
 
 ### Home brew installation output
 
+```txt
 ==> postgresql
 To migrate existing data from a previous major version of PostgreSQL run:
   brew postgresql-upgrade-database
@@ -31,6 +33,7 @@ To restart postgresql after an upgrade:
   brew services restart postgresql
 Or, if you don't want/need a background service you can just run:
   /opt/homebrew/opt/postgresql/bin/postgres -D /opt/homebrew/var/postgres
+```
 
 ## References
 
