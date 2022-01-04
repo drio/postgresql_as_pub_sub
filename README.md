@@ -1,7 +1,6 @@
 ## Intro
 
 This is a proof of concept to explore the idea of using [PostgreSQL as a job server](https://webapp.io/blog/postgres-is-the-answer/).
-server.
 
 <img width="1904" alt="Screen Shot 2022-01-04 at 8 52 11 AM" src="https://user-images.githubusercontent.com/17954/148070510-e153b0cb-3eba-44d1-ae29-afea90da2736.png">
 
