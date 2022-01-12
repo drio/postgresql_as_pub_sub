@@ -17,7 +17,7 @@ This is a proof of concept to explore the idea of using [PostgreSQL as a job ser
     $ source venv/bin/activate
     $ python ./worker.py
     ```
-    or
+    or, if you are a gopher:
     ```
     $ go run ./worker.go
     ```
