@@ -14,7 +14,7 @@ start-fg-default:
 	/opt/homebrew/opt/postgresql/bin/postgres es -D /opt/homebrew/var/postgres
 
 jobs:
-	while :; do make new_job list_jobs; sleep 5; done
+	while :; do make new_job list_jobs; sleep $(SLEEP); done
 
 up-sql:
 	echo "create database $(DB_NAME)" | psql
