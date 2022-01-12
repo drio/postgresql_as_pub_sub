@@ -3,7 +3,7 @@
 This is a proof of concept to explore the idea of using [PostgreSQL as a job server](https://webapp.io/blog/postgres-is-the-answer/).
 
 What you are seeing here is a tmux session with four panes. The top left one
-shows a process that creates new jobs and list the latest rows in the ps_jobs
+shows a process that creates new jobs (simulates a producer) and list the latest rows in the ps_jobs
 table (the sql table we use to capture jobs). The right panes show the output
 of the workers. The top one runs a go version and the bottom one runs a python
 version. Finally the bottom left pane shows runs postgresql in the foreground.
