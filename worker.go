@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"time"
+	"unicode"
 
 	"github.com/lib/pq"
 )
@@ -70,11 +71,21 @@ func doWork(db *sql.DB, id, data string) {
 				status_change_time = current_timestamp
 		WHERE
 				id = $3
-	`, 1, "success", id)
+	`, sumDigitsInString(data), "success", id)
 
 	if err != nil {
 		log.Fatalf("could not update row: %v", err)
 	}
+}
+
+func sumDigitsInString(s string) int {
+	sum := 0
+	for _, char := range s {
+		if unicode.IsNumber(char) {
+			sum += int(char - '0')
+		}
+	}
+	return sum
 }
 
 func runSelect(db *sql.DB, logger *log.Logger, id string) (string, string) {
