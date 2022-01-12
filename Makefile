@@ -1,5 +1,6 @@
 DB_NAME=pub_sub_test
 SLEEP?=10
+LIMIT?=2
 
 all:
 	psql $(DB_NAME)
@@ -29,7 +30,7 @@ new_job:
 	cat sql/new_job.sql | psql $(DB_NAME)
 
 list_jobs:
-	echo "select * from ps_jobs" | psql $(DB_NAME)
+	echo "select * from ps_jobs order by status_change_time DESC limit $(LIMIT)" | psql $(DB_NAME)
 
 venv:
 	virtualenv -p python3.9 ./venv
