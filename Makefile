@@ -1,3 +1,5 @@
+DB_NAME=pub_sub_test
+
 all:
 	psql $(DB_NAME)
 
@@ -10,7 +12,6 @@ start-fg: var/postgres
 start-fg-default:
 	/opt/homebrew/opt/postgresql/bin/postgres es -D /opt/homebrew/var/postgres
 
-DB_NAME=pub_sub_test
 
 up-sql:
 	echo "create database $(DB_NAME)" | psql
@@ -32,3 +33,7 @@ venv:
 
 deps:
 	pip3 install psycopg2
+
+godeps:
+	go get github.com/lib/pq
+.PHONY: godeps
