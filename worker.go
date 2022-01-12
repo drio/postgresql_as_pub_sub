@@ -49,7 +49,6 @@ func main() {
 				logger.Println("New Job!", id, data, status)
 				doWork(db, id, data)
 			}
-			return
 		case <-time.After(90 * time.Second):
 			logger.Println("Received no events for 90 seconds, checking connection")
 			go func() {

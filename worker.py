@@ -14,7 +14,7 @@ if len(sys.argv) != 2:
 worker_name = sys.argv[1]
 
 def log(msg):
-    print(f"[{worker_name}] >> {msg}")
+    print(f'[{worker_name}] >> {msg}')
 
 '''
 FIXME: In a real world we will want to have an intermediate step

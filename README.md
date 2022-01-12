@@ -8,14 +8,18 @@ This is a proof of concept to explore the idea of using [PostgreSQL as a job ser
 
 1. Start your psql instance: `$ make start-fg` (console 1)
 2. Create the database and tables: `$ make clean up-sql`
-3. Create jobs: `$ while :; do make new_job list_jobs; sleep 5; done` (console 2)
+3. Create jobs: `$ make jobs` (console 2)
 4. Connect to the db with the psql client: `make` (console 3) and tell psql you 
    want to listen to the channel that omits events on table changes with: `listen jobs_status_channel;`.
    This is just for you to make sure you are getting data in the channel.
-6. In another console, run the woker (console 4):
+6. In more consoles, run your workers:
     ```
     $ source venv/bin/activate
     $ python ./worker.py
+    ```
+    or
+    ```
+    $ go run ./worker.go
     ```
 
 ### Home brew installation output
